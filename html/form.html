@@ -1,0 +1,32 @@
+<!-- 사용자로부터 input을 받기 위한 태그 
+    action: action="API주소"
+    method: method-"GET|POST"
+        POST: 중요한 정보, 대량의 정보
+    -->
+
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Form - Input</title>
+  <link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="./form_styles.css">
+</head>
+<body>
+    <!-- placeholder: 아무것도 입력하지 않았을 때 기본적으로 보여줄 문구 
+        maxlength: 최대 길이 제한
+        minlength: 최소 길이 제한 
+        required: 필수 입력 사항
+        disabled: 사용할 수 없게 막음 
+        value: 기본값-->
+    <input type="text" placeholder="이름" minlength="5" maxlength="13" value="hello" required />
+    <input type="email" placeholder="이메일"/>
+    <input type="password" placeholder="패스워드" minlength="6"/>
+    <input type="url" placeholder="URL"/>
+    <input type="number" placeholder="나이" min="12"/>
+    <!-- accept: 확장자 제한 -->
+    <input type="file" accept=".png, .jpg"/>
+</body>
+</html>
