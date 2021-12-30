@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreadCrumb & Pagination</title>
+    <link rel="stylesheet" href="./BreadCrumb&Pagination.css">
+</head>
+<body>
+    <div class="breadcrumb">
+        <img src="https://raw.githubusercontent.com/rohjs/bugless-101/cc64c9b6e3b2b5a230bd0b0507c2e2fe9ec0a2e5/html-practice/05-breadcrumb-and-pagination/assets/icon-repository.svg" alt="">
+        <a href="https://github.com/cozups" aria-label="Go to cozups profile page.">cozups</a>
+        <p>/</p>
+        <a href="https://github.com/cozups/FE_practice" aria-label="Go to Front End practice page.">FE_practice</a>
+    </div>
+    <div class="pagination">
+        <!-- WAI-ARIA 
+            모든 사용자가 페이지를 편하게 사용할 수 있도록 함
+            aria-label: 스크린 리더가 읽는 문구
+        -->
+        <a href="#" aria-label="Go to previous page" class="disabled">previous</a>
+        <ol>
+            <li class="current-page">
+                <a href="#" aria-label="Current page. Go to page 1">1</a>
+            </li>
+            <li>
+                <a href="#" aria-label="Go to page 2">2</a>
+            </li>
+            <li>
+                <a href="#" aria-label="Go to page 3">3</a>
+            </li>
+            <li>
+                <a href="#" aria-label="Go to page 4">4</a>
+            </li>
+            <li>
+                <a href="#" aria-label="Go to page 5">5</a>
+            </li>
+            <li>
+                <button type="button" disabled>...</button>
+            </li>
+            <li>
+                <a href="#" aria-label="Go to page 6">6</a>
+            </li>
+            <li>
+                <a href="#" aria-label="Go to page 7">7</a>
+            </li>
+            <li>
+                <a href="#" aria-label="Go to page 8">8</a>
+            </li>
+        </ol>
+        <a href="#" aria-label="Go to next page">next</a>
+    </div>
+</body>
+</html>
