@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 
+        name="메타데이터 종류"
+            viewport: 화면 사이즈
+            author: 작성자
+            keywords: 키워드
+            description: 페이지 설명
+            ...
+        content="메타데이터 값"
+     -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- title: 검색 최적화(SEO)에 중요한 역할을 함 -->
+    <!-- title 잘 쓰는법 
+        1. 키워드 나열 x
+        2. 페이지마다 그에 맞게 변경
+        3. 무엇에 관한 내용인지 쓰기
+    -->
+    <title>cozups의 Document</title>
+
+    <!-- link: CSS 스타일시트 첨부 -->
+    <link rel="stylesheet" href="./head_styles.css">
+    <link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    
+    <!-- style: html 문서 내에서 CSS 코드를 작성하고 싶을 때 
+        굳이 html 안에서 쓸 필요 없다!
+    -->
+    <style>
+        h1{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello</h1>
+    <!-- script: html 문서 내에 JavaScript 코드를 작성할 때 사용
+        body안에서 제일 마지막에 쓰는 것이 좋다.
+        로딩이 될 때 까지 멈춰있기 때문.
+    -->
+    <script src="./head.js"></script>
+    <script>
+        console.log("hello world");
+    </script>
+</body>
+</html>

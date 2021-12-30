@@ -1,0 +1,37 @@
+<!-- controls: 컨트롤러 표시
+    autoplay: 자동재생
+    loop: 반복재생
+ -->
+
+<!-- 오디오 source 하나만 가능 
+<audio src="./assets/audios/kimbug.mp3" controls autoplay loop></audio>
+-->
+
+<!-- audio 확장자를 지원하지 않는 브라우저가 있을 수 있다.
+    1. wav 재생
+    2. 안되면 mp3 재생
+    3. 안되면 ogg 재생
+    4. 안되면 p 태그 출력
+-->
+<audio controls>
+    <source src="./assets/audios/kimbug.wav" type="audio/wav">
+    <source src="./assets/audios/kimbug.mp3" type="audio/mpeg">
+    <source src="./assets/audios/kimbug.ogg" type="audio/ogg">
+    <p>
+        오디오를 재생할 수 없습니다
+    </p>
+</audio>
+
+<!-- <video src="./assets/videos/kimbug.mov" controls></video> -->
+
+<video autoplay controls loop>
+    <source src="./assets/videos/kimbug.mov" type="video/mp4">
+    <source src="./assets/videos/kimbug.mp4" type="video/mp4">
+    <p>
+        비디오를 재생할 수 없습니다.
+    </p>
+</video>
+
+<!-- 다른 html을 embed하고 싶을 때 -->
+<iframe src="https://edu.goorm.io" frameborder="0"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N1VPDrPNodw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

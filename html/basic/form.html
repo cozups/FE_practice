@@ -1,0 +1,50 @@
+<!-- 사용자로부터 input을 받기 위한 태그 
+    action: action="API주소"
+    method: method-"GET|POST"
+        POST: 중요한 정보, 대량의 정보
+    -->
+
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Form - Input</title>
+  <link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="./form_styles.css">
+</head>
+<body>
+    <!-- placeholder: 아무것도 입력하지 않았을 때 기본적으로 보여줄 문구 
+        maxlength: 최대 길이 제한
+        minlength: 최소 길이 제한 
+        required: 필수 입력 사항
+        disabled: 사용할 수 없게 막음 
+        value: 기본값-->
+
+    <!-- label
+        label for="인풋id"
+        input id="인풋id"
+    -->
+    
+    <h1>회원가입</h1>
+    <form action="#" method="post">
+        <label for="user-name">이름</label>
+        <input type="text" id="user-name" required placeholder="이름">
+        <label for="user-id">아이디</label>
+        <input type="text" id="user-id" required placeholder="아이디">
+        <label for="user-password">비밀번호</label>
+        <input type="password" id="user-password" required placeholder="비밀번호">
+        <label for="user-email">이메일</label>
+        <input type="email" id="user-email" placeholder="이메일">
+        <label for="user-tel">전화번호</label>
+        <input type="tel" id="user-tel" placeholder="전화번호 (***-****-****)">
+        <label for="user-age">나이</label>
+        <input type="number" id="user-age" placeholder="나이">
+        <label for="user-file">파일 첨부</label>
+        <input type="file">
+        <button type="submit">Submit</button>
+
+    </form>
+</body>
+</html>
