@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+.box {
+    background-color: #0066ff;
+    width: 480px;
+    height: 480px;;
+    padding-top: 40px;
+    padding-left: 50px;
+    color: #fff;
+    border: 4px solid #000;
+}
+
+.child {
+    /* block은 width를 지정한 경우, 나머지 부분을 margin으로 설정한다. */
+    /* 부모의 height를 별도로 지정하지 않은 경우, 부모의 height는 자식의 height의 합 */
+    background-color: coral;
+    height: 50px;
+    width: 100px;
+    margin: 0 auto;
+    padding: 10px;
+}
