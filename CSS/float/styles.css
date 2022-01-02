@@ -1,0 +1,70 @@
+/* float를 사용하면 자식이 집나간 자식이 된다. -> 빈 공간이 생긴다. */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    color: black;
+}
+
+.parent{
+    
+    width: 400px;
+    margin: 0 auto; /* 가운데 정렬 */
+    background-color: #eff2f7;
+}
+
+.parent::after{
+    content: "";
+    display: block;
+    clear: left;
+}
+
+.other{
+    background-color: #000;
+    color: #fff;
+}
+
+.child {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    float: left;
+}
+
+.red {
+    background-color:crimson;
+}
+
+.yellow {
+    background-color:gold;
+}
+
+.blue {
+    background-color:rgb(0, 81, 255);
+}
+
+/*  float를 하면...
+
+    inline
+    inline-block    ->      block
+    block
+
+    블록인데 길막을 못한다!
+*/
+
+/* 무너지는 레이아웃을 고치는 방법 
+    1. overflow: hidden
+        float된 자식을 찾을 수 있다
+    2. clearfix
+        clear: left / right / both
+        clear: left -> float:left된 것을 찾는다.
+        !! clear는 display가 block인 애들한테만 쓸 수 있다 !! 
+    3. Pseudo Element
+        CSS로 fake 요소를 만듦
+        ::before, ::after
+*/

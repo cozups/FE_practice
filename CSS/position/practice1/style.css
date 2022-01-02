@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #273444;
+}
+
+/* ▼ WHERE YOUR CODE BEGINS */
+
+/* img는 inline이지만 파일 자체가 가지는 속성이므로 width, height를 쓸 수 있다. */
+.user-photo img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-status {
+    width: 12px;
+    height: 12px;
+    background-color: #21D891;
+    border-radius: 50%;
+    border: 2px solid white;
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+}
+
+.user-card::after{
+    content: "";
+    display: block;
+    clear: left;
+}
+
+.user-photo,
+.user-name {
+    float: left;
+}
+
+.user-photo{
+    margin-right: 12px;
+    position: relative;
+}
+
+.user-name {
+    padding: 8px 0;
+}
+
+.user-card {
+    padding: 8px 12px;
+    background-color: white;
+    width: 240px;
+    border: 1px solid #E5EAEF;
+    border-radius: 4px;
+}

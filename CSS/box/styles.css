@@ -20,3 +20,11 @@
     margin: 0 auto;
     padding: 10px;
 }
+
+/* 
+    block = 길막
+    inline = 흐름
+*/
+
+/* inline은 margin, border, padding에서 top, bottom을 쓸 수 없다. */
+/* inline-block은 inline의 속성과 block의 속성이 합쳐진 것 */
