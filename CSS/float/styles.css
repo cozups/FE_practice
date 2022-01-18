@@ -16,6 +16,7 @@ body {
 }
 
 .parent::after{
+    /* content 반드시 작성! */
     content: "";
     display: block;
     clear: left;
