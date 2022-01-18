@@ -1,4 +1,5 @@
 * {
+    /* 기존의 width, height는 content의 것! */
     box-sizing: border-box;
 }
 .box {
@@ -26,5 +27,5 @@
     inline = 흐름
 */
 
-/* inline은 margin, border, padding에서 top, bottom을 쓸 수 없다. */
+/* inline은 margin, border, padding에서 top, bottom을 쓸 수 없다. 흐름을 박살내는 녀석이니까 */
 /* inline-block은 inline의 속성과 block의 속성이 합쳐진 것 */
