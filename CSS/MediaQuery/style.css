@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    color: #212529;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #ff4949;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.box::after {
+    content: "Mobile";
+}
+
+@media screen and (min-width: 576px) {
+    /* CSS 선언 */
+    .box {
+        background-color: #ff5216;
+    }
+
+    .box::after {
+        content: "Landscape Phone";
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .box{
+        background-color: #ffc82c;
+    }
+
+    .box::after {
+        content: "Tablet";
+    }
+}
