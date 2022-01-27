@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+button {
+  border: none;
+  background-color: #fff;
+}
+
+.line-button {
+  width: 110px;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-align: center;
+  padding: 18px 30px;
+  font-family: "Lato", sans-serif;
+  position: relative;
+  cursor: pointer;
+}
+
+.line-button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #0066ff;
+  bottom: 0;
+  left: 0;
+  transition: width 250ms ease-in, background-color 250ms ease-in;
+}
+
+.line-button:hover::after {
+  width: 100%;
+  background-color: hotpink;
+}
