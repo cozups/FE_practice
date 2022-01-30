@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+img {
+  margin-bottom: 24px;
+}
+
+ul {
+  list-style: none;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+input {
+  border-radius: 4px;
+  margin-bottom: 12px;
+  margin-right: 10px;
+  height: 30px;
+  border: 1px solid darkgray;
+}
+
+button {
+  border: none;
+  background-color: #0066ff;
+  color: white;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+#contents {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  height: 100vh;
+}
