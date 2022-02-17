@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>날짜 객체</title>
+  </head>
+  <body>
+    <script>
+      /*var today = new Date();
+      var nowMonth = today.getMonth(); // 월-1 반환
+      nowDate = today.getDate();
+      nowDay = today.getDay(); // 1~6: 월~토
+
+      document.write("<h1>오늘 날짜 정보</h1>");
+      document.write("현재 월: " + nowMonth, "<br/>");
+      document.write("현재 일: " + nowDate, "<br/>");
+      document.write("현재 요일: " + nowDay, "<br/>");
+
+      var worldCup = new Date(2002, 4, 31);
+      var theMonth = worldCup.getMonth();
+      theDate = worldCup.getDate();
+      theDay = worldCup.getDay();
+
+      document.write("<h1>월드컵 날짜 정보</h1>");
+      document.write("2002월드컵 월: " + theMonth, "<br/>");
+      document.write("2002월드컵 일: " + theDate, "<br/>");
+      document.write("2002월드컵 요일: " + theDay, "<br/>");*/
+      var today = new Date();
+      var nowYear = today.getFullYear();
+
+      var theDate = new Date(nowYear, 11, 31);
+      var diffDate = theDate.getTime() - today.getTime();
+      // getTime - 1970/1/1 부터 지난 시간을 밀리초로 표기
+
+      var result = Math.ceil(diffDate / (60 * 1000 * 60 * 24));
+      document.write("연말 D-Day: " + result + " 일 남았습니다.");
+    </script>
+  </body>
+</html>

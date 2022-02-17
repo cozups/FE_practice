@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문자열 객체 - 이메일 유효성 검사</title>
+  </head>
+  <body>
+    <script>
+      var userEmail = prompt("당신의 이메일 주소는?", "");
+      var arrUrl = [".co.kr", ".com", ".net", ".or.kr", ".go.kr"];
+
+      var check1 = false;
+      var check2 = false;
+
+      if (userEmail.indexOf("@") > 0) {
+        check1 = true;
+      }
+
+      for (var i = 0; i < arrUrl.length; i++) {
+        if (userEmail.indexOf(arrUrl[i]) > 0) {
+          check2 = true;
+        }
+      }
+
+      if (check1 && check2) {
+        document.write(userEmail);
+      }
+    </script>
+  </body>
+</html>
