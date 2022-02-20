@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>선택자</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+  </head>
+  <body>
+    <script>
+      $(function () {
+        var arr_1 = [
+          {
+            area: "Seoul",
+            name: "Kim",
+          },
+          {
+            area: "Busan",
+            name: "Hong",
+          },
+          {
+            area: "Daejeon",
+            name: "Park",
+          },
+          {
+            area: "Seoul",
+            name: "Big",
+          },
+        ];
+
+        // a: object, b: index
+        var arr_2 = $.map(arr_1, function (a, b) {
+          if (a.area == "Seoul") {
+            return a;
+          }
+        });
+        console.log(arr_2);
+        console.log("==== first End ====");
+
+        var arr_3 = $.grep(arr_1, function (a, b) {
+          if (a.area == "Seoul") {
+            return true;
+          } else {
+            return false;
+          }
+        });
+        console.log(arr_3);
+        console.log("==== Second End ====");
+      });
+    </script>
+  </body>
+</html>
