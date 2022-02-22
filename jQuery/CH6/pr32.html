@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메소드</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      line-height: 1;
+    }
+
+    #wrap {
+      height: 5000px;
+      padding-top: 2000px;
+    }
+  </style>
+  <body>
+    <div id="wrap">
+      <h1>위치 메소드</h1>
+    </div>
+
+    <script>
+      $(function () {
+        var topNum = $("h1").offset().top;
+        $(window).scrollTop(topNum);
+
+        var sct = $(window).scrollTop();
+        console.log(sct);
+      });
+    </script>
+  </body>
+</html>
