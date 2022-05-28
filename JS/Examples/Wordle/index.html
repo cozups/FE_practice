@@ -4,17 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
     <title>Wordle</title>
-    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <input class="input" />
-    <input class="input" />
-    <input class="input" />
-    <input class="input" />
-    <input class="input" />
-    <button>제출</button>
-
-    <script src="./index.js"></script>
+    <h1>Wordle 5</h1>
+    <div id="try-table">
+      <table>
+        <tbody id="answers"></tbody>
+      </table>
+    </div>
+    <div id="user-input-area">
+      <form id="input-form">
+        <div class="inputs">
+          <input type="text" maxlength="1" />
+          <input type="text" maxlength="1" />
+          <input type="text" maxlength="1" />
+          <input type="text" maxlength="1" />
+          <input type="text" maxlength="1" />
+        </div>
+        <div class="button-area">
+          <button type="button">제출</button>
+        </div>
+      </form>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>
