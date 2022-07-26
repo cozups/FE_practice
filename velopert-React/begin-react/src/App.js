@@ -1,9 +1,13 @@
 import Hello from './Components/Hello';
+import Wrapper from './Components/Wrapper';
 
 function App() {
   return (
     <div className="App">
-      <Hello color="red" />
+      <Wrapper>
+        <Hello color="red" name="react" />
+        <Hello color="pink" />
+      </Wrapper>
     </div>
   );
 }
