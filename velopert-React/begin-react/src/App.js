@@ -1,9 +1,9 @@
-import Counter from './Components/Counter';
+import InputSample from './Components/InputSample';
 
 function App() {
   return (
     <div className="App">
-      <Counter />
+      <InputSample />
     </div>
   );
 }
