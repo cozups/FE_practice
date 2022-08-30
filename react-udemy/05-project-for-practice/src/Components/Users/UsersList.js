@@ -3,6 +3,22 @@ import styled from 'styled-components';
 
 import Card from '../UI/Card';
 
+const UsersList = (props) => {
+  return (
+    <UsersListCard>
+      <ul>
+        {props.users.map((user) => (
+          <li key={user.id}>
+            {user.name} ({user.age} years old)
+          </li>
+        ))}
+      </ul>
+    </UsersListCard>
+  );
+};
+
+export default UsersList;
+
 const UsersListCard = styled(Card)`
   margin: 2rem auto;
   width: 90%;
@@ -19,19 +35,3 @@ const UsersListCard = styled(Card)`
     padding: 0.5rem;
   }
 `;
-
-const UsersList = (props) => {
-  return (
-    <UsersListCard>
-      <ul>
-        {props.users.map((user) => (
-          <li key={user.id}>
-            {user.name} ({user.age} years old)
-          </li>
-        ))}
-      </ul>
-    </UsersListCard>
-  );
-};
-
-export default UsersList;
