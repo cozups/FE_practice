@@ -1,25 +1,46 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReactDOM from 'react-dom';
 
 import Card from './Card';
 import Button from './Button';
 
+const BackdropPortal = (props) => {
+  return <Backdrop onClick={props.onConfirm} />;
+};
+
+const ModalOverlay = (props) => {
+  return (
+    <ErrorModalCard>
+      <Header className="header">
+        <h2>{props.title}</h2>
+      </Header>
+      <Content>
+        <p>{props.message}</p>
+      </Content>
+      <Actions>
+        <Button onClick={props.onConfirm}>Okay</Button>
+      </Actions>
+    </ErrorModalCard>
+  );
+};
+
 const ErrorModal = (props) => {
   return (
-    <div>
-      <Backdrop onClick={props.onConfirm} />
-      <ErrorModalCard>
-        <Header className="header">
-          <h2>{props.title}</h2>
-        </Header>
-        <Content>
-          <p>{props.message}</p>
-        </Content>
-        <Actions>
-          <Button onClick={props.onConfirm}>Okay</Button>
-        </Actions>
-      </ErrorModalCard>
-    </div>
+    <>
+      {ReactDOM.createPortal(
+        <BackdropPortal onConfirm={props.onConfirm} />,
+        document.getElementById('backdrop-root')
+      )}
+      {ReactDOM.createPortal(
+        <ModalOverlay
+          title={props.title}
+          message={props.message}
+          onConfirm={props.onConfirm}
+        />,
+        document.getElementById('overlay-root')
+      )}
+    </>
   );
 };
 
