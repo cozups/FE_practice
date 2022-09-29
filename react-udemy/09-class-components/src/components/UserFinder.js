@@ -13,9 +13,14 @@ class UserFinder extends Component {
   constructor() {
     super();
     this.state = {
-      filteredUsers: DUMMY_USERS,
+      filteredUsers: [],
       searchTerm: '',
     };
+  }
+
+  componentDidMount() {
+    // Send http request...
+    this.setState({ filteredUsers: DUMMY_USERS });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -61,7 +66,7 @@ class UserFinder extends Component {
 //   return (
 //     <Fragment>
 //       <div className={classes.finder}>
-//         <input type="search" onChange={searchChangeHandler} />
+//         <input type='search' onChange={searchChangeHandler} />
 //       </div>
 //       <Users users={filteredUsers} />
 //     </Fragment>
