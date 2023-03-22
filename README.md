@@ -12,3 +12,7 @@
 
 - Do it! 자바스크립트+제이쿼리 입문
 - 인터넷 자료
+
+# Nextjs-tutorial
+
+- Next.js document를 보며 연습
