@@ -1,5 +1,4 @@
 import { MongoClient } from 'mongodb';
-mongodbUrl = process.env.MONGODB_URL;
 
 // /api/new-meetup
 
@@ -7,7 +6,7 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const data = req.body;
 
-    const client = await MongoClient.connect(mongodbUrl);
+    const client = await MongoClient.connect(process.env.MONGODB_URL);
     const db = client.db();
 
     const meetupsCollection = db.collection('meetups');
