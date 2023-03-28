@@ -1,10 +1,10 @@
 import NavBar from '@/components/NavBar';
 
-export default function Home() {
+export default function AboutUs() {
   return (
     <div>
       <NavBar />
-      <h1>hello</h1>
+      <h1>About us</h1>
     </div>
   );
 }
