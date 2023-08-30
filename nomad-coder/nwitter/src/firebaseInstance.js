@@ -6,6 +6,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
 } from 'firebase/auth';
 
 // Your web app's Firebase configuration
@@ -26,3 +27,5 @@ export const createUserWithEmail = (email, password) =>
   createUserWithEmailAndPassword(authService, email, password);
 export const signInWithEmail = (email, password) =>
   signInWithEmailAndPassword(authService, email, password);
+export const authStateObserver = (callbackFn) =>
+  onAuthStateChanged(authService, callbackFn);
