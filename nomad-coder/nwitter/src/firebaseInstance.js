@@ -8,6 +8,7 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
 } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -20,7 +21,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 export const authService = getAuth();
 export const createUserWithEmail = (email, password) =>
@@ -29,3 +30,5 @@ export const signInWithEmail = (email, password) =>
   signInWithEmailAndPassword(authService, email, password);
 export const authStateObserver = (callbackFn) =>
   onAuthStateChanged(authService, callbackFn);
+
+export const dbService = getFirestore(app);
