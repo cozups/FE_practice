@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { collection, addDoc, getDocs, onSnapshot } from 'firebase/firestore';
+import { collection, addDoc, onSnapshot } from 'firebase/firestore';
 import { dbService } from 'firebaseInstance';
+import Nweet from 'components/Nweet';
 
 const Home = ({ userObject }) => {
   const [nweet, setNweet] = useState('');
@@ -38,8 +39,6 @@ const Home = ({ userObject }) => {
     setNweet(value);
   };
 
-  console.log(nweets);
-
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -55,9 +54,11 @@ const Home = ({ userObject }) => {
 
       <div>
         {nweets.map((nweet) => (
-          <div key={nweet.id}>
-            <h4>{nweet.text}</h4>
-          </div>
+          <Nweet
+            key={nweet.id}
+            nweetObj={nweet}
+            isOwner={nweet.creatorId === userObject.uid}
+          />
         ))}
       </div>
     </div>
