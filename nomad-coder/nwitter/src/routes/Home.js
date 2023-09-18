@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { collection, addDoc, onSnapshot } from 'firebase/firestore';
-import { dbService } from 'firebaseInstance';
+import { ref, uploadString, getDownloadURL } from 'firebase/storage';
+import { dbService, storageService } from 'firebaseInstance';
 import Nweet from 'components/Nweet';
+import { v4 as uuidv4 } from 'uuid';
 
 const Home = ({ userObject }) => {
   const [nweet, setNweet] = useState('');
@@ -20,12 +22,27 @@ const Home = ({ userObject }) => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
+    let attachmentURL = '';
+    if (attachment) {
+      const attachmentRef = ref(
+        storageService,
+        `${userObject.uid}/${uuidv4()}`
+      );
+      const response = await uploadString(
+        attachmentRef,
+        attachment,
+        'data_url'
+      );
+      attachmentURL = await getDownloadURL(response.ref);
+    }
+    const newNweet = {
+      text: nweet,
+      createdAt: Date.now(),
+      creatorId: userObject.uid,
+      attachmentURL,
+    };
     try {
-      const docRef = addDoc(collection(dbService, 'nweets'), {
-        text: nweet,
-        createdAt: Date.now(),
-        creatorId: userObject.uid,
-      });
+      const docRef = addDoc(collection(dbService, 'nweets'), newNweet);
       setNweet('');
       console.log('Document written with ID: ', docRef.id);
     } catch (error) {

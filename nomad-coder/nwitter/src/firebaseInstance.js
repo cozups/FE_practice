@@ -9,6 +9,7 @@ import {
   onAuthStateChanged,
 } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -32,3 +33,4 @@ export const authStateObserver = (callbackFn) =>
   onAuthStateChanged(authService, callbackFn);
 
 export const dbService = getFirestore(app);
+export const storageService = getStorage();
