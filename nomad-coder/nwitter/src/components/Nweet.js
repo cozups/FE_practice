@@ -1,5 +1,6 @@
 import { doc, deleteDoc, updateDoc } from 'firebase/firestore';
-import { dbService } from 'firebaseInstance';
+import { deleteObject, ref } from 'firebase/storage';
+import { dbService, storageService } from 'firebaseInstance';
 import { useState } from 'react';
 
 const Nweet = ({ nweetObj, isOwner }) => {
@@ -10,6 +11,10 @@ const Nweet = ({ nweetObj, isOwner }) => {
     const ok = window.confirm('Are you sure you want to delete this nweet?');
     if (ok) {
       await deleteDoc(doc(dbService, 'nweets', nweetObj.id));
+      if (nweetObj.attachmentURL) {
+        const deleteRef = ref(storageService, nweetObj.attachmentURL);
+        await deleteObject(deleteRef);
+      }
     }
   };
   const toggleEditing = () => {
