@@ -1,11 +1,9 @@
-import DataFetchingOne from './components/useReducer/DataFetchingOne';
-import DataFetchingTwo from './components/useReducer/DataFetchingTwo';
+import ParentComponent from './components/useCallback/ParentComponent';
 
 function App() {
   return (
     <div>
-      {/* <DataFetchingOne /> */}
-      <DataFetchingTwo />
+      <ParentComponent />
     </div>
   );
 }
