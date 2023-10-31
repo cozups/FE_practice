@@ -1,9 +1,9 @@
-import ParentComponent from './components/useCallback/ParentComponent';
+import Counter from './components/useMemo/Counter';
 
 function App() {
   return (
     <div>
-      <ParentComponent />
+      <Counter />
     </div>
   );
 }
