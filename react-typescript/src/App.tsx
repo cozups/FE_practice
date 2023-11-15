@@ -1,15 +1,13 @@
-import Container from './components/Container';
+import { UserContextProvider } from './components/context/UserContext';
+import User from './components/context/User';
 
 function App() {
   return (
-    <>
-      <Container
-        styles={{
-          border: '1px solid black',
-          padding: '1rem',
-        }}
-      />
-    </>
+    <div className="App">
+      <UserContextProvider>
+        <User />
+      </UserContextProvider>
+    </div>
   );
 }
 
