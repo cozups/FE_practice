@@ -1,10 +1,13 @@
-import { Private } from './components/auth/Private';
-import { Profile } from './components/auth/Profile';
+import List from './components/generics/List';
 
 function App() {
   return (
     <div className="App">
-      <Private isLoggedIn={true} component={Profile} />
+      <List
+        items={['Batman', 'Superman', 'Wonder Woman']}
+        onClick={(item) => console.log(item)}
+      />
+      <List items={[1, 2, 3]} onClick={(item) => console.log(item)} />
     </div>
   );
 }
