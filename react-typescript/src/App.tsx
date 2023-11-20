@@ -1,13 +1,9 @@
-import List from './components/generics/List';
+import RandomNumber from './components/restriction/RandomNumber';
 
 function App() {
   return (
     <div className="App">
-      <List
-        items={['Batman', 'Superman', 'Wonder Woman']}
-        onClick={(item) => console.log(item)}
-      />
-      <List items={[1, 2, 3]} onClick={(item) => console.log(item)} />
+      <RandomNumber value={10} isPositive />
     </div>
   );
 }
