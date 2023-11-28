@@ -1,5 +1,5 @@
 const redux = require('redux');
-const createStore = redux.createStore();
+const createStore = redux.createStore;
 const BUY_CAKE = 'BUY_CAKE';
 
 // Action Creator: returns action
