@@ -8,7 +8,7 @@ export const RQSuperHeroesPage = () => {
     queryFn: () => {
       return axios.get('http://localhost:4000/superheroes');
     },
-    gcTime: 5000,
+    staleTime: 30000,
   });
 
   console.log({ isLoading, isFetching });
