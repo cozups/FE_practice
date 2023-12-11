@@ -7,9 +7,5 @@ export const useSuperHeroesData = () => {
     queryFn: () => {
       return axios.get('http://localhost:4000/superheroes');
     },
-    select: (data) => {
-      const superHeroNames = data.data.map((hero) => hero.name);
-      return superHeroNames;
-    },
   });
 };
