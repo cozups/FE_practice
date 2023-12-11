@@ -8,10 +8,11 @@ export const RQSuperHeroesPage = () => {
     queryFn: () => {
       return axios.get('http://localhost:4000/superheroes');
     },
-    enabled: false,
+    select: (data) => {
+      const superHeroNames = data.data.map((hero) => hero.name);
+      return superHeroNames;
+    },
   });
-
-  console.log({ isLoading, isFetching });
 
   if (isLoading || isFetching) {
     return <h2>Loading...</h2>;
@@ -24,9 +25,8 @@ export const RQSuperHeroesPage = () => {
   return (
     <>
       <h2>Super Heroes</h2>
-      <button onClick={refetch}>Fetch Heroes</button>
-      {data?.data.map((hero) => (
-        <div key={hero.id}>{hero.name}</div>
+      {data.map((heroName) => (
+        <li key={heroName}>{heroName}</li>
       ))}
     </>
   );
