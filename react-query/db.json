@@ -29,5 +29,17 @@
       "id": 3,
       "name": "Rachel Green"
     }
+  ],
+  "users": [
+    {
+      "id": "cozups@test.com",
+      "channelId": "pp"
+    }
+  ],
+  "channels": [
+    {
+      "id": "pp",
+      "course": ["React", "Vue", "Angular"]
+    }
   ]
 }
