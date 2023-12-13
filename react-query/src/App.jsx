@@ -24,7 +24,7 @@ function App() {
               <Link to="/superheroes">Traditional Super Heroes</Link>
             </li>
             <li>
-              <Link to="/RQSuperheroes">RQ Super Heroes</Link>
+              <Link to="/rq-superheroes">RQ Super Heroes</Link>
             </li>
           </ul>
         </nav>
