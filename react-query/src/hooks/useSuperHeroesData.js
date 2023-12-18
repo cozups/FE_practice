@@ -1,4 +1,4 @@
-import { useQuery, useMutation } from '@tanstack/react-query';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 
 const addSuperHero = (hero) => {
@@ -15,7 +15,11 @@ export const useSuperHeroesData = () => {
 };
 
 export const useAddSuperHero = () => {
+  const queryClient = useQueryClient();
   return useMutation({
     mutationFn: addSuperHero,
+    onSuccess: () => {
+      queryClient.invalidateQueries(['super-heroes']);
+    },
   });
 };
