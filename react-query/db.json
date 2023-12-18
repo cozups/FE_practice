@@ -24,6 +24,11 @@
       "name": "Black Widow",
       "alterEgo": "Scarlet Johanson",
       "id": 5
+    },
+    {
+      "name": "CatWoman",
+      "alterEgo": "Sellina Kyle",
+      "id": 6
     }
   ],
   "friends": [
