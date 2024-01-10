@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSetRecoilState } from 'recoil';
-import { todoListState } from '../state/atom';
+import { todoListState } from '../../state/todo';
 import { v4 as uuidV4 } from 'uuid';
 
 export const TodoItemCreator = () => {

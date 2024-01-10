@@ -1,12 +1,7 @@
 import { RecoilRoot } from 'recoil';
-import { TodoList } from './components/TodoList';
 
 function App() {
-  return (
-    <RecoilRoot>
-      <TodoList />
-    </RecoilRoot>
-  );
+  return <RecoilRoot></RecoilRoot>;
 }
 
 export default App;
