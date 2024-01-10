@@ -48,3 +48,40 @@ export const userNameQuery = selectorFamily({
     return data[0].name;
   },
 });
+
+export const userInfoQuery = selectorFamily({
+  key: 'userInfo',
+  get: (userId) => async () => {
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/users?id=${userId}`
+    );
+    if (response.error) {
+      throw response.error;
+    }
+    const data = await response.json();
+    return data[0];
+  },
+});
+
+export const currentUserInfoQuery = selector({
+  key: 'currentUserInfo',
+  get: ({ get }) => {
+    return get(userInfoQuery(get(currentUserIDState)));
+  },
+});
+
+export const userAddressQuery = selector({
+  key: 'userAddress',
+  get: ({ get }) => {
+    const currentUserInfo = get(currentUserInfoQuery);
+    return currentUserInfo.address;
+  },
+});
+
+export const userListState = selector({
+  key: 'userList',
+  get: async () => {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/users`);
+    return response.json();
+  },
+});
