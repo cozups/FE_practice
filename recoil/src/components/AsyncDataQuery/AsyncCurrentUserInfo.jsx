@@ -1,9 +1,10 @@
 import React from 'react';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { useRecoilCallback, useRecoilValue, useSetRecoilState } from 'recoil';
 import {
   currentUserIDState,
   currentUserNameQuery,
   userAddressQuery,
+  userInfoQuery,
   userListState,
 } from '../../state/user';
 
@@ -11,7 +12,12 @@ export const AsyncCurrentUserInfo = () => {
   const userName = useRecoilValue(currentUserNameQuery);
   const userAddress = useRecoilValue(userAddressQuery);
   const userList = useRecoilValue(userListState);
-  const setCurrentUserId = useSetRecoilState(currentUserIDState);
+  // const setCurrentUserId = useSetRecoilState(currentUserIDState);
+
+  const changeUser = useRecoilCallback(({ snapshot, set }) => (userId) => {
+    snapshot.getLoadable(userInfoQuery(userId));
+    set(currentUserIDState, userId);
+  });
 
   return (
     <div>
@@ -22,7 +28,7 @@ export const AsyncCurrentUserInfo = () => {
       </div>
       <ul>
         {userList.map((user) => (
-          <li key={user.id} onClick={() => setCurrentUserId(user.id)}>
+          <li key={user.id} onClick={() => changeUser(user.id)}>
             {user.name}
           </li>
         ))}
