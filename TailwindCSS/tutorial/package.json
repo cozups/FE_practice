@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-css": "tailwindcss build src/styles.css -o public/styles.css",
-    "build-watch": "tailwindcss src/styles.css -o public/styles.css --watch"
+    "watch-css": "tailwindcss src/styles.css -o public/styles.css --watch"
   },
   "keywords": [],
   "author": "",
