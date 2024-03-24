@@ -13,6 +13,9 @@ module.exports = {
       fontFamily: {
         body: ['Nunito'],
       },
+      fontSize: {
+        mammoth: ['8rem', { lineHeight: 1 }],
+      },
     },
   },
   plugins: [],
