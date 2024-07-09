@@ -1,14 +1,19 @@
 'use client';
 
-import { serverSideFunction } from '@/app/utils/server-utils';
+import { useTheme } from '@/app/components/themeProvider';
 
 export default function ClientRoutePage() {
-  console.log('Client route rendered.');
-  const result = serverSideFunction();
+  const theme = useTheme();
+  const settings = {
+    dots: true,
+  };
   return (
-    <>
-      <div>Client Route Page</div>
-      <p>{result}</p>
-    </>
+    <h1
+      style={{
+        color: theme.colors.secondary,
+      }}
+    >
+      Client Route Page
+    </h1>
   );
 }
