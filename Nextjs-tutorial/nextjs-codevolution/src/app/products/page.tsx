@@ -12,11 +12,11 @@ export default async function ProductsPage() {
   const response = await fetch('http://localhost:3001/products');
   const products = await response.json();
 
-  const cookieStore = cookies();
-  const theme = cookieStore.get('theme');
+  // const cookieStore = cookies();
+  // const theme = cookieStore.get('theme');
 
-  const detailsResponse = await fetch('http://localhost:3001/products/1');
-  const details = await detailsResponse.json();
+  // const detailsResponse = await fetch('http://localhost:3001/products/1');
+  // const details = await detailsResponse.json();
 
   return (
     <ul className="space-y-4 p-4">
@@ -28,7 +28,6 @@ export default async function ProductsPage() {
           <h2 className="text-xl font-semibold">{product.title}</h2>
           <p>{product.description}</p>
           <p className="text-lg font-medium">${product.price}</p>
-          <p>{details.price}</p>
         </li>
       ))}
     </ul>
