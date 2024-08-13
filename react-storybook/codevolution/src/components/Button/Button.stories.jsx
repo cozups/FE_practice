@@ -1,8 +1,19 @@
 import Button from './Button';
+import Center from '../Center/Center';
 
 export default {
   title: 'Form/Button',
   component: Button,
+  decorators: [
+    (Story) => (
+      <Center>
+        <Story />
+      </Center>
+    ),
+  ],
+  argTypes: {
+    onClick: { action: 'clicked' },
+  },
 };
 
 export const Primary = () => <Button variant="primary">Primary</Button>;
