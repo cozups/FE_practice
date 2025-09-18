@@ -5,10 +5,8 @@ export default function PostList() {
   const [page, setPage] = useState(1);
   const { posts } = usePosts({ page });
 
-  console.log(page);
   return (
     <div>
-      <h1>Posts</h1>
       <p>now: {page} page</p>
       <div>
         <button onClick={() => page - 1 > 0 && setPage((prev) => prev - 1)}>page - 1</button>

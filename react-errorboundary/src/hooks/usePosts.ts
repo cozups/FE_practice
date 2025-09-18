@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { Post } from "../types/post";
+import { useErrorBoundary } from "react-error-boundary";
 
 interface UsePostsQuery {
   page?: number;
@@ -9,6 +10,7 @@ export function usePosts({ page = 1 }: UsePostsQuery = {}) {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
+  const { showBoundary } = useErrorBoundary();
 
   const abortControllerRef = useRef<AbortController | null>(null);
 
@@ -30,7 +32,7 @@ export function usePosts({ page = 1 }: UsePostsQuery = {}) {
           console.log("Aborted");
           return;
         }
-
+        showBoundary(err);
         setError(err as Error);
       } finally {
         setLoading(false);
@@ -38,7 +40,7 @@ export function usePosts({ page = 1 }: UsePostsQuery = {}) {
     }
 
     loadPosts();
-  }, [page]);
+  }, [page, showBoundary]);
 
   return { posts, loading, error };
 }
